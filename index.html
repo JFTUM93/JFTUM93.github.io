@@ -1,0 +1,78 @@
+<!-- index.html	: Page de lancement -->
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+
+  <title>Modèlisation de site web</title>
+
+  <meta name="description" content="Création structure site de présentation">
+  <meta name="keywords" content="Association,Humanitaire,Culturelle">
+  <meta name="author" content="JFT">
+  <meta http-equiv="Content-Type" content="text/html">
+
+<!--	<link rel="stylesheet" href="style.css">	-->
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      height: 150px;
+      border-bottom: 1px solid #ccc;
+    }
+
+    header iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .container {
+      display: flex;
+      height: calc(100vh - 150px);
+    }
+
+    main {
+      flex: 9;
+      border-right: 1px solid #ccc;
+    }
+
+    nav {
+      flex: 1;
+      min-width: 180px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Bannière -->
+  <header>
+    <iframe src="aslogo.html" title="Bannière"></iframe>
+  </header>
+
+  <!-- Contenu principal + menu -->
+  <div class="container">
+
+    <main>
+      <iframe src="aspresen.html" name="principal" title="Contenu principal"></iframe>
+    </main>
+
+    <nav>
+      <iframe src="aschoix.html" name="sommaire" title="Menu"></iframe>
+    </nav>
+
+  </div>
+
+</body>
+</html>

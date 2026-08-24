@@ -1,0 +1,106 @@
+<!-- acontac.html	: Page de Renseignement -->
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+
+ <meta charset="UTF-8">
+
+ <title>Information</title>
+
+  <meta name="description" content="Création structure site de présentation">
+  <meta name="keywords" content="Association,Humanitaire,Culturelle">
+  <meta name="author" content="JFT">
+  <meta name="robots" content="index, follow">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+ <style>
+
+body {
+	font-family: Arial, sans-serif;
+	background: #f5f5f5;
+}
+form {
+	background: #fff;
+	width: 420px;
+	margin: 40px auto;
+	padding: 20px;
+	border-radius: 6px;
+}
+label {
+  display: block;
+  margin-top: 12px;
+  font-family: "Flat Brush", cursive;
+  color: #800080;
+}
+
+input, textarea {
+	width: 100%;
+	padding: 6px;
+	margin-top: 4px;
+}
+button {
+	margin-top: 15px;
+	padding: 10px;
+	width: 100%;
+}
+
+h2 {
+	color: blue;
+  	font-family: "Flat Brush", cursive;
+	text-align: center;
+}
+.ligne {
+	display: flex;
+	align-items: center;
+	margin-bottom: 10px;
+}
+.ligne label {
+		width: 100px; /* largeur fixe pour aligner les libellés */
+		font-weight: bold;
+}
+.ligne input {
+		flex: 1;
+}
+.statut {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+}
+
+.statut {
+    white-space: nowrap;
+}
+
+ </style>
+</head>
+
+<body>
+    
+    <form action="https://formsubmit.co/jftum93@gmail.com" method="POST">
+
+		<h2>Nous sommes à votre écoute</h2>
+
+		<div class="ligne"><label>Nom    </label><input type="text" name="NOM" value="_"></div>
+		<div class="ligne"><label>Prénom </label><input type="text" name="PRE" value="_"></div>
+		<div class="statut">
+			<span>Statut :</span>
+			<label><input type="radio" name="STA" value="societe">Société</label>
+			<label>   </label>
+			<label><input type="radio" name="STA" value="particulier">Particulier</label>
+		</div>
+		<div class="ligne"><label>Téléphone </label><input type="text" name="TEL" value="0"></div>
+		<div class="ligne"><label>Email     </label><input type="email name="EMA"" value="_@_"></div>
+		<p>Message :<br><textarea name="MSG" rows="6" cols="50">Une question, une suggestion ou besoin d'aide ?
+Laissez-nous un message.</textarea></p>
+
+		<button type="Envoyer">Envoyer</button>
+    </form>
+    
+    <footer>
+      <img src="../../../../JF.TUM/bin/compteur.cgi?df=compteur12" alt="Compteur de visites">
+    </footer>
+ </body>
+</html>
