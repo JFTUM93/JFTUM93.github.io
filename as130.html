@@ -1,19 +1,35 @@
-<!-- as130.html	Soutenir les familles -->
+<!-- as160.html	Soutenir les familles -->
 
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    
-	<title>Soutenir les familles</title>
-
+    	<meta charset="UTF-8">
   	<meta name="description" content="Création structure site de présentation">
   	<meta name="keywords" content="Association,Humanitaire,Culturelle">
   	<meta name="author" content="JFT">
   	<meta name="robots" content="index, follow">
   	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+	<title>Soutenir les familles</title>
 
     <style>
+<!--
+	.appel-don {
+		width: 100%;
+		text-align: center;
+	}
+-->
+
+<!--
+.	appel-don {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+-->
+
+
         body {
             margin: 0;
             font-family: Arial, sans-serif;
@@ -80,50 +96,119 @@
 
 <body>
    <head>
-	<meta charset="UTF-8">
-	   <title>Soutenir notre association</title>
-<!--	<h1>FR130 Contribuez à répondre à leurs besoins les plus urgents.</h1>	-->
+	   <title><font color="#8000FF">Soutenir notre association</title>
    </head>
    <body bgcolor="#FFFFFF">
-	<center>
-	   <h1 style="color:#FF0080;">Soutenir notre association</h1>
-	   <p style="margin:3px 0;">Votre soutien nous permet d'apporter une aide concrète aux familles qui rencontrent des difficultés dans leur quotidien.</p>
-	   <p style="margin:3px 0;">Grâce à votre générosité, nous pouvons financer des actions dans les domaines de l'alimentation,</p>
-	   <p style="margin:3px 0;">de l'équipement et de l'accompagnement des familles.</p>
-	<hr width="80%">
-	   <h2 style="color:#8000FF;">Comment nous aider ?</h2>
-	      <table border="0" cellpadding="0">
-		<tr><td>✔</td><td>Faire un don ponctuel</td></tr>
-		<tr><td>✔</td><td>Faire un don d'un Kit-Alimentaire <strong><span style="color:red;">50 €</span></strong></td></tr>
-		<tr><td>✔</td><td>Faire un don d'un Kit-Equipement <strong><span style="color:red;">50 €</span></strong></td></tr>
-		<tr><td>✔</td><td>Mettre en place un soutien régulier</td></tr>
-		<tr><td>✔</td><td>Participer à nos actions solidaires</td></tr>
-		<tr><td>✔</td><td>Parler de notre association autour de vous</td></tr>
-	      </table>
-	<hr width="80%">
-	   <h2 style="color:#8000FF;">Je souhaite apporter mon soutien</h2>
 
-            <form action="https://formsubmit.co/jftum93@gmail.com" method="POST">
+<h1><font color="#8000FF">Je soutiens le projet</h1>
 
-		<p>Nom    : <input type="text" name="nom" size="40"></p>
-		<p>Prénom :<input type="text" name="prenom" size="40"></p>
-		<p>Statut : <input type="radio" name="statut" value="particulier">
-			Particulier<input type="radio" name="statut" value="societe">Société</p>
-		<p>Email  :<input type="text" name="email" size="40"></p>
-		<p>Montant envisagé :<BR><input type="text" name="montant" size="20"></p>
-		<p>Message :<br><textarea name="message" rows="5" cols="50"></textarea></p>
-		<p><input type="submit" value="Envoyer mon soutien"></p>
+<!--
 
-	   </form>
+<div class="appel-don">
+	Soutenez notre action par un don
+-->
 
-       <hr width="80%">
-	  <p><font color="#FF0080"><b>Merci pour votre générosité.</b></font></p>
-	  <p>Chaque contribution nous aide à améliorer le quotidien des familles que nous accompagnons.</p>
-    </center>
+<!-- PARTCULIERS -->
+	<div class="particuliers">
+		<h3>👤 Pour les particuliers</h3>
+			<p>Choisissez le montant de votre don :</p>
+
+		<label>
+			<input type="radio" name="don-particulier">
+			Don libre : <input type="number" min="1" placeholder="Montant en €">
+		</label>
+		<br>
+
+		<label>
+		   <input type="radio" name="don-particulier">
+			30 € – 1 kit alimentaire petite famille
+		</label>
+		<br>
+
+		<label>
+		<input type="radio" name="don-particulier">
+			50 € – 1 kit alimentaire grande famille
+		</label>
+		<br>
+
+		<label>
+		<input type="radio" name="don-particulier">
+			50 € – 1 kit chargeur avec 2 ampoules
+		</label>
+		<br>
+
+		<label>
+		<input type="radio" name="don-particulier">
+			50 € – 1 kit solaire avec 2 ampoules
+		</label>
+		<br>
+
+		<label>
+		<input type="radio" name="don-particulier">
+			70 € – 1 kit solaire avec 4 ampoules
+		</label>
+	</div>
+
+	<hr>
+
+<!-- ENTREPRISES -->
+	<div class="institutions">
+		<h3>🏢 Pour les entreprises, associations et institutions</h3>
+
+		<p>Participez à l'équipement d'un village en finançant plusieurs kits.</p>
+
+		<table border="1" cellpadding="8" cellspacing="0">
+			<thead>
+				<tr>
+					<th>Quantité</th>
+					<th>Équipement financé</th>
+					<th>Coût unitaire</th>
+					<th>Total</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><input type="number" min="0"></td>
+					<td>Kit alimentaire petite famille</td>
+					<td>30 €</td>
+					<td>______ €</td>
+				</tr>
+				<tr>
+					<td><input type="number" min="0"></td>
+					<td>Kit alimentaire grande famille</td>
+					<td>50 €</td>
+					<td>______ €</td>
+				</tr>
+				<tr>
+					<td><input type="number" min="0"></td>
+					<td>Kit chargeur avec 2 ampoules</td>
+					<td>50 €</td>
+					<td>______ €</td>
+				</tr>
+				<tr>
+					<td><input type="number" min="0"></td>
+					<td>Kit solaire avec 2 ampoules</td>
+					<td>50 €</td>
+					<td>______ €</td>
+				</tr>
+				<tr>
+					<td><input type="number" min="0"></td>
+					<td>Kit solaire avec 4 ampoules</td>
+					<td>70 €</td>
+					<td>______ €</td>
+				</tr>
+			</tbody>
+		</table>
+
+			<p><strong>Montant total de notre contribution :</strong>__________________ €</p>
+	</div>
+<!--
+</div>
+-->
+</section>
 
   <footer>
     <img src="../../../../JF.TUM/bin/compteur.cgi?df=compteur12" alt="Compteur de visites">
   </footer>
  </body>
 </html>
-
