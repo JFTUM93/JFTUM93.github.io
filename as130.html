@@ -1,4 +1,4 @@
-<!-- as160.html	Soutenir les familles -->
+<!-- as130.html	Soutenir les familles -->
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -82,23 +82,22 @@
 	   <title><font color="#FF0080">Soutenir notre association</title>
    </head>
    <body bgcolor="#FFFFFF">
-<!--
-	<h1><style="color: red;">Je soutiens le projet</h1>
--->
-        <h1><font color="#FF0080">Je soutien le projet</font></h1>
 
+	<div style="margin-left:22ch;">
+	     <h1><font color="#FF0080">Je soutien le projet</font></h1>
+	</div>
+
+<div style="margin-left:35ch;">
 <!-- PARTCULIERS -->
 	<div class="particuliers">
-<!--
-		<h3>👤 Pour les particuliers</h3>
--->
+
                 <h3><font color="#FF0080">👤 Pour les particuliers</font></h3>
 
 			<p>Choisissez le montant de votre don :</p>
 
 		<label>
 			<input type="radio" name="don-particulier">
-			Don libre : <input type="number" min="1" placeholder="Montant en €">
+			Don libre : <input type="number" style="width:13ch; min="1" placeholder="Montant en €">
 		</label>
 		<br>
 
@@ -142,11 +141,7 @@
 
 <!-- ENTREPRISES -->
 	<div class="institutions">
-<!--
-		<h3>🏢 Pour les entreprises, associations et institutions</h3>
--->
                 <h3><font color="#FF0080">🏢 Pour les entreprises, associations et institutions</font></h3>
-
 
 		<p>Participez à l'équipement d'un village en finançant plusieurs kits.</p>
 
@@ -161,39 +156,39 @@
 			</thead>
 			<tbody>
 				<tr>
-					<td><input type="number" min="0"></td>
+					<td><input type="number" style="width:8ch; min="0"></td>
 					<td>Kit ALIPT alimentaire petite famille</td>
-					<td>30 €</td>
+					<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 30 €</td>
 					<td>______ €</td>
 				</tr>
 				<tr>
-					<td><input type="number" min="0"></td>
+					<td><input type="number" style="width:8ch; min="0"></td>
 					<td>Kit ALIGR alimentaire grande famille</td>
-					<td>50 €</td>
+					<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 50 €</td>
 					<td>______ €</td>
 				</tr>
 				<tr>
-					<td><input type="number" min="0"></td>
+					<td><input type="number" style="width:8ch; min="0"></td>
 					<td>Kit ACALR Avec lanterne rechargeable ou 3 piles AA</td>
-					<td>50 €</td>
+					<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 50 €</td>
 					<td>______ €</td>
 				</tr>
 				<tr>
-					<td><input type="number" min="0"></td>
+					<td><input type="number" style="width:8ch; min="0"></td>
 					<td>Kit ELE2A chargeur avec 2 ampoules</td>
-					<td>50 €</td>
+					<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 50 €</td>
 					<td>______ €</td>
 				</tr>
 				<tr>
-					<td><input type="number" min="0"></td>
+					<td><input type="number" style="width:8ch; min="0"></td>
 					<td>Kit BAT2A solaire avec 2 ampoules</td>
-					<td>50 €</td>
+					<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 50 €</td>
 					<td>______ €</td>
 				</tr>
 				<tr>
-					<td><input type="number" min="0"></td>
+					<td><input type="number" style="width:8ch; min="0"></td>
 					<td>Kit BAT4A solaire avec 4 ampoules</td>
-					<td>70 €</td>
+					<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 70 €</td>
 					<td>______ €</td>
 				</tr>
 			</tbody>
@@ -207,15 +202,24 @@
 
     <form action="https://formsubmit.co/jftum93@gmail.com" method="POST">
 
-	<p>Nom    :<input type="text" name="nom" size="40"></p>
+	<p>Nom &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:<input type="text" name="nom" size="40"></p>
 	<p>Prénom :<input type="text" name="prenom" size="40"></p>
 	<p>Statut :<input type="radio" name="statut" value="particulier">Particulier<input type="radio" name="statut" value="societe">Société</p>
 	<p>Adresse e-mail :<input type="text" name="email" size="40"></p>
-	<p>Montant envisagé :<input type="number" name="montant" min="1"> €</p>
+	<p>Montant envisagé :<input type="number" name="montant" style="width:8ch; min="1"> €</p>
 	<p>Message :<br><textarea name="message" rows="6" cols="50"></textarea></p>
-	<p><input type="submit" value="Je fais un don"></p>
+	<p><input type="submit" value="Je fais un don"
+		style="
+		color:blue;
+		font-size:100%;
+		font-weight:bold;
+		padding:8px 16px;
+		border-radius:5px;
+	></p>
 
    </form>
+
+</div>
 
 </section>
 
@@ -224,3 +228,24 @@
   </footer>
  </body>
 </html>
+
+
+<!--
+
+<input type="submit"
+	value="Je fais un don"
+	style="
+	font-size:150%;
+	font-weight:bold;
+	background-color:#003366;
+	color:red;
+	padding:8px 16px;
+	border-radius:5px;
+">
+
+
+   <div>
+	<label for="montant" style="display:inline-block; width:20ch;">		Montant :</label>
+	<input type="number" id="montant" name="montant"style="width:8ch;">
+   </div>
+-->

@@ -83,6 +83,9 @@
 </head>
 <body bgcolor="#FFFFFF">
 	<center>
+
+    <form action="https://formsubmit.co/jftum93@gmail.com" method="POST">
+
 	<h1><font color="#FF0080">Parrainer une famille</font></h1>
 	<p style="margin:3px 0;">Certaines familles ont besoin d'un accompagnement durable pour retrouver stabilité, confiance et sérénité.</p>
 	<p style="margin:3px 0;">En devenant parrain ou marraine, vous participez directement à l'amélioration de leur quotidien.</p>
@@ -101,9 +104,9 @@
    <hr width="80%">
 <!-- "#8000FF" -->
 	<h2><font color="#FF0080">Je souhaite parrainer une famille</font></h2>
-
+<--
     <form action="https://formsubmit.co/jftum93@gmail.com" method="POST">
-
+-->
 	<p>Nom    :<input type="text" name="nom" size="40"></p>
 	<p>Prénom :<input type="text" name="prenom" size="40"></p>
 	<p>Statut :<input type="radio" name="statut" value="particulier">Particulier<input type="radio" name="statut" value="societe">Société</p>
@@ -116,9 +119,16 @@
 		<option>À définir ensemble</option>
 	   </select>
 	</p>
-	<p>Montant envisagé :<input type="number" name="montant" min="1"> €</p>
+	<p>Montant envisagé :<input type="number" name="montant" style="width:8ch; min="1"> €</p>
 	<p>Message :<br><textarea name="message" rows="6" cols="50"></textarea></p>
-	<p><input type="submit" value="Je parraine une famille"></p>
+	<p><input type="submit" value="Je parraine une famille"
+		style="
+		color:blue;
+		font-size:90%;
+		font-weight:bold;
+		padding:8px 16px;
+		border-radius:5px;
+	</p>
 
    </form>
 
