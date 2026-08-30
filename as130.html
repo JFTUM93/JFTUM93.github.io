@@ -20,7 +20,49 @@
 	    color: #0000FF;
         }
    </style>	
-	<title>Soutenir les familles</title>
+
+<script>
+  function calculer() {
+
+    const qteAlipt = Number(document.getElementById("qte_alipt").value) || 0;
+    const qteAligr = Number(document.getElementById("qte_aligr").value) || 0;
+    const qteAcalr = Number(document.getElementById("qte_acalr").value) || 0;
+    const qteAle2a = Number(document.getElementById("qte_ale2a").value) || 0;
+    const qteBat2a = Number(document.getElementById("qte_bat2a").value) || 0;
+    const qteBat4a = Number(document.getElementById("qte_bat4a").value) || 0;
+
+    const totalAlipt = qteAlipt * 30;
+    const totalAligr = qteAligr * 50;
+    const totalAcalr = qteAcalr * 50;
+    const totalAle2a = qteAle2a * 50;
+    const totalBat2a = qteBat2a * 50;
+    const totalBat4a = qteBat4a * 70;
+
+    const totalGeneral = totalAlipt + totalAligr + totalAcalr + totalAle2a + totalBat2a + totalBat4a;
+
+    document.getElementById("rst_alipt").innerHTML =
+        totalAlipt.toLocaleString("fr-FR") + " €";
+
+    document.getElementById("rst_aligr").innerHTML =
+        totalAligr.toLocaleString("fr-FR") + " €";
+
+    document.getElementById("rst_acalr").innerHTML =
+        totalAcalr.toLocaleString("fr-FR") + " €";
+
+    document.getElementById("rst_ale2a").innerHTML =
+        totalAle2a.toLocaleString("fr-FR") + " €";
+
+    document.getElementById("rst_bat2a").innerHTML =
+        totalBat2a.toLocaleString("fr-FR") + " €";
+
+    document.getElementById("rst_bat4a").innerHTML =
+        totalBat4a.toLocaleString("fr-FR") + " €";
+
+
+    document.getElementById("rst_total").innerHTML =
+        totalGeneral.toLocaleString("fr-FR") + " €";
+}
+</script>
 
 </head>
 
@@ -54,37 +96,37 @@
 
 		<label>
 		   <input type="radio" name="don-particulier">
-			30 € – 1 kit ALIPT alimentaire petite famille
+			30 € – ALIPT 1 kit alimentaire petite famille
 		</label>
 		<br>
 
 		<label>
 		<input type="radio" name="don-particulier">
-			50 € – 1 kit ALIGR alimentaire grande famille
+			50 € – ALIGR 1 kit alimentaire grande famille
 		</label>
 		<br>
  
 		<label>
 		<input type="radio" name="don-particulier">
-			50 € – 1 kit ACALR lanterne rechargeable avec 3 piles AA
+			50 € – ACALR 1 kit lanterne rechargeable avec 3 piles AA
 		</label>
 		<br>
 
 		<label>
 		<input type="radio" name="don-particulier">
-			50 € – 1 kit ELE2A chargeur avec 2 ampoules
+			50 € – ELE2A 1 kit chargeur avec 2 ampoules
 		</label>
 		<br>
 
 		<label>
 		<input type="radio" name="don-particulier">
-			50 € – 1 kit BAT2A solaire avec 2 ampoules
+			50 € – BAT2A 1 kit solaire avec 2 ampoules
 		</label>
 		<br>
 
 		<label>
 		<input type="radio" name="don-particulier">
-			70 € – 1 kit BAT4A solaire avec 4 ampoules
+			70 € – BAT4A 1 kit solaire avec 4 ampoules
 		</label>
 	</div>
 
@@ -102,51 +144,57 @@
 					<th>Quantité</th>
 					<th>Équipement financé</th>
 					<th>Coût unitaire</th>
-					<th>Total</th>
+ 					<th>Total</th>
 				</tr>
 			</thead>
-			<tbody>
-				<tr>
-					<td><input type="number" style="width:8ch; min="0"></td>
-					<td>Kit ALIPT alimentaire petite famille</td>
-					<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 30 €</td>
-					<td>______ €</td>
-				</tr>
-				<tr>
-					<td><input type="number" style="width:8ch; min="0"></td>
-					<td>Kit ALIGR alimentaire grande famille</td>
-					<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 50 €</td>
-					<td>______ €</td>
-				</tr>
-				<tr>
-					<td><input type="number" style="width:8ch; min="0"></td>
-					<td>Kit ACALR Avec lanterne rechargeable ou 3 piles AA</td>
-					<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 50 €</td>
-					<td>______ €</td>
-				</tr>
-				<tr>
-					<td><input type="number" style="width:8ch; min="0"></td>
-					<td>Kit ELE2A chargeur avec 2 ampoules</td>
-					<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 50 €</td>
-					<td>______ €</td>
-				</tr>
-				<tr>
-					<td><input type="number" style="width:8ch; min="0"></td>
-					<td>Kit BAT2A solaire avec 2 ampoules</td>
-					<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 50 €</td>
-					<td>______ €</td>
-				</tr>
-				<tr>
-					<td><input type="number" style="width:8ch; min="0"></td>
-					<td>Kit BAT4A solaire avec 4 ampoules</td>
-					<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 70 €</td>
-					<td>______ €</td>
-				</tr>
-			</tbody>
-		</table>
+		<tbody>
 
-			<p><strong>Montant total de notre contribution :</strong>__________________ €</p>
-	</div>
+<!-- Alipt	-->
+			<tr>
+				<td><input type="number"  id="qte_alipt" min="0" value="0" oninput="calculer()"></td>
+   				<td>ALIPT Kit alimentaire petite famille</td>
+				<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 30 €</td>
+				<td><span id="rst_alipt">0 €</span></td>
+			</tr>
+<!-- Aligr	-->
+			<tr>
+   				<td><input type="number"  id="qte_aligr"	min="0"	value="0" oninput="calculer()"></td>
+				<td>ALIGR Kit alimentaire grande famille</td>
+				<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 50 €</td><td><span id="rst_aligr">0 €</span></td>
+			</tr>
+<!-- Acalr	-->
+			<tr>
+   				<td><input type="number"  id="qte_acalr" min="0" value="0" oninput="calculer()"></td>
+   				<td>ACALR Kit avec lanterne rechargeable ou 3 piles AA</td>
+				<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 50 €</td><td><span id="rst_acalr">0 €</span></td>
+			</tr>
+<!-- Ale2a	-->
+			<tr>
+				<td><input type="number"  id="qte_ale2a" min="0" value="0" oninput="calculer()"></td>
+				<td>ELE2A Kit chargeur avec 2 ampoules</td>
+   				<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 50 €</td><td><span id="rst_ale2a">0 €</span></td>
+			</tr>
+<!-- Bat2a	-->
+			<tr>
+				<td><input type="number"  id="qte_bat2a" min="0" value="0" oninput="calculer()"></td>
+				<td>BAT2A Kit solaire avec 2 ampoules</td>
+				<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 50 €</td>
+				<td><span id="rst_bat2a">0 €</span></td>
+			</tr>
+<!-- Bat4a	-->
+			<tr>
+				<td><input type="number"  id="qte_bat4a" min="0" value="0" oninput="calculer()"></td>
+				<td>BAT4A Kit solaire avec 4 ampoules</td>
+				<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 70 €</td><td><span id="rst_bat4a">0 €</span></td>
+			</tr>
+
+	        </tbody>
+	</table>
+
+	<p><strong>Montant total de votre contribution :</strong><span id="rst_total">0 €</span></p>
+
+   </div>
+
 
 <!-- "#8000FF" -->
 	<h2><font color="#FF0080">Je souhaiterais faire un don.</font></h2>
