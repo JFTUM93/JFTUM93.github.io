@@ -1,233 +1,214 @@
-<!-- as130.html	Soutenir les familles -->
-
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    	<meta charset="UTF-8">
-  	<meta name="description" content="Création structure site de présentation">
-  	<meta name="keywords" content="Association,Humanitaire,Culturelle">
-  	<meta name="author" content="JFT">
-  	<meta name="robots" content="index, follow">
-  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
- 	
-	<link rel="stylesheet" href="style.css">   
 
-   <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #ffffff;
-	    color: #0000FF;
-        }
-   </style>	
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Soutenir notre association</title>
+
+<style>
+body{
+font-family:Arial,sans-serif;
+margin:20px;
+}
+
+h1,h2,h3{
+color:#FF0080;
+}
+
+table{
+border-collapse:collapse;
+}
+
+th,td{
+border:1px solid #000;
+padding:8px;
+}
+
+input[type=number]{
+width:70px;
+}
+
+.total{
+font-size:1.2em;
+font-weight:bold;
+color:#0000FF;
+}
+</style>
 
 <script>
-  function calculer() {
 
-    const qteAlipt = Number(document.getElementById("qte_alipt").value) || 0;
-    const qteAligr = Number(document.getElementById("qte_aligr").value) || 0;
-    const qteAcalr = Number(document.getElementById("qte_acalr").value) || 0;
-    const qteAle2a = Number(document.getElementById("qte_ale2a").value) || 0;
-    const qteBat2a = Number(document.getElementById("qte_bat2a").value) || 0;
-    const qteBat4a = Number(document.getElementById("qte_bat4a").value) || 0;
+function calculer() {
 
-    const totalAlipt = qteAlipt * 30;
-    const totalAligr = qteAligr * 50;
-    const totalAcalr = qteAcalr * 50;
-    const totalAle2a = qteAle2a * 50;
-    const totalBat2a = qteBat2a * 50;
-    const totalBat4a = qteBat4a * 70;
+const qteAlipt = Number(document.getElementById("qte_alipt").value) || 0;
+const qteAligr = Number(document.getElementById("qte_aligr").value) || 0;
+const qteAcalr = Number(document.getElementById("qte_acalr").value) || 0;
+const qteAle2a = Number(document.getElementById("qte_ale2a").value) || 0;
+const qteBat2a = Number(document.getElementById("qte_bat2a").value) || 0;
+const qteBat4a = Number(document.getElementById("qte_bat4a").value) || 0;
 
-    const totalGeneral = totalAlipt + totalAligr + totalAcalr + totalAle2a + totalBat2a + totalBat4a;
+const totalAlipt = qteAlipt * 30;
+const totalAligr = qteAligr * 50;
+const totalAcalr = qteAcalr * 50;
+const totalAle2a = qteAle2a * 50;
+const totalBat2a = qteBat2a * 50;
+const totalBat4a = qteBat4a * 70;
 
-    document.getElementById("rst_alipt").innerHTML =
-        totalAlipt.toLocaleString("fr-FR") + " €";
+const totalGeneral =
+totalAlipt +
+totalAligr +
+totalAcalr +
+totalAle2a +
+totalBat2a +
+totalBat4a;
 
-    document.getElementById("rst_aligr").innerHTML =
-        totalAligr.toLocaleString("fr-FR") + " €";
+document.getElementById("rst_alipt").textContent = totalAlipt + " €";
+document.getElementById("rst_aligr").textContent = totalAligr + " €";
+document.getElementById("rst_acalr").textContent = totalAcalr + " €";
+document.getElementById("rst_ale2a").textContent = totalAle2a + " €";
+document.getElementById("rst_bat2a").textContent = totalBat2a + " €";
+document.getElementById("rst_bat4a").textContent = totalBat4a + " €";
+document.getElementById("rst_total").textContent = totalGeneral + " €";
 
-    document.getElementById("rst_acalr").innerHTML =
-        totalAcalr.toLocaleString("fr-FR") + " €";
+document.getElementById("montant").value = totalGeneral;
 
-    document.getElementById("rst_ale2a").innerHTML =
-        totalAle2a.toLocaleString("fr-FR") + " €";
+document.getElementById("montant_total").value =
+totalGeneral + " €";
 
-    document.getElementById("rst_bat2a").innerHTML =
-        totalBat2a.toLocaleString("fr-FR") + " €";
-
-    document.getElementById("rst_bat4a").innerHTML =
-        totalBat4a.toLocaleString("fr-FR") + " €";
-
-
-    document.getElementById("rst_total").innerHTML =
-        totalGeneral.toLocaleString("fr-FR") + " €";
+document.getElementById("detail_don").value =
+"ALIPT=" + totalAlipt + " €, " +
+"ALIGR=" + totalAligr + " €, " +
+"ACALR=" + totalAcalr + " €, " +
+"ELE2A=" + totalAle2a + " €, " +
+"BAT2A=" + totalBat2a + " €, " +
+"BAT4A=" + totalBat4a + " €, " +
+"TOTAL=" + totalGeneral + " €";
 }
-</script>
 
+</script>
 </head>
 
 <body>
-   <head>
-	   <title><font color="#FF0080">Soutenir notre association</title>
-   </head>
-   <body bgcolor="#FFFFFF">
 
-	<div style="margin-left:22ch;">
-	     <h1><font color="#FF0080">Je soutien le projet</font></h1>
-	</div>
+<h1>Je soutiens le projet</h1>
 
+<form action="https://formsubmit.co/jftum93@gmailype="hidden" name="_subject"
+value="Nouveau don reçu">
 
-<div style="margin-left:33ch;">
-<!--
-    <form action="https://formsubmit.co/jftum93@gmail.com" method="POST">
--->
-<!-- PARTCULIERS -->
-	<div class="particuliers">
+<input type="hidden" name="montant_total"
+id="montant_total">
 
-                <h3><font color="#FF0080">👤 Pour les particuliers</font></h3>
+<input type="hidden" name="detail_don"
+id="detail_don">
 
-			<p>Choisissez le montant de votre don :</p>
+<h3>Entreprises, associations et institutions</h3>
 
-		<label>
-			<input type="radio" name="don-particulier">
-			Don libre : <input type="number" style="width:13ch; min="1" placeholder="Montant en €">
-		</label>
-		<br>
+<table>
 
-		<label>
-		   <input type="radio" name="don-particulier">
-			30 € – ALIPT 1 kit alimentaire petite famille
-		</label>
-		<br>
+<tr>
+<th>Quantité</th>
+<th>Désignation</th>
+<th>Prix</th>
+<th>Total</th>
+</tr>
 
-		<label>
-		<input type="radio" name="don-particulier">
-			50 € – ALIGR 1 kit alimentaire grande famille
-		</label>
-		<br>
- 
-		<label>
-		<input type="radio" name="don-particulier">
-			50 € – ACALR 1 kit lanterne rechargeable avec 3 piles AA
-		</label>
-		<br>
+<tr>
+<td><input type="number" id="qte_alipt" min="0" value="0" oninput="calculer()"></td>
+<td>ALIPT Kit alimentaire petite famille</td>
+<td>30 €</td>
+<td><span id="rst_alipt">0 €</span></td>
+</tr>
 
-		<label>
-		<input type="radio" name="don-particulier">
-			50 € – ELE2A 1 kit chargeur avec 2 ampoules
-		</label>
-		<br>
+<tr>
+<td><input type="number" id="qte_aligr" min="0" value="0" oninput="calculer()"></td>
+<td>ALIGR Kit alimentaire grande famille</td>
+<td>50 €</td>
+<td><span id="rst_aligr">0 €</span></td>
+</tr>
 
-		<label>
-		<input type="radio" name="don-particulier">
-			50 € – BAT2A 1 kit solaire avec 2 ampoules
-		</label>
-		<br>
+<tr>
+<td><input type="number" id="qte_acalr" min="0" value="0" oninput="calculer()"></td>
+<td>ACALR Kit lanterne rechargeable</td>
+<td>50 €</td>
+<td><span id="rst_acalr">0 €</span></td>
+</tr>
 
-		<label>
-		<input type="radio" name="don-particulier">
-			70 € – BAT4A 1 kit solaire avec 4 ampoules
-		</label>
-	</div>
+<tr>
+<td><input type="number" id="qte_ale2a" min="0" value="0" oninput="calculer()"></td>
+<td>ELE2A Kit chargeur + 2 ampoules</td>
+<td>50 €</td>
+<td><span id="rst_ale2a">0 €</span></td>
+</tr>
 
-	<hr>
+<tr>
+<td><input type="number" id="qte_bat2a" min="0" value="0" oninput="calculer()"></td>
+<td>BAT2A Kit solaire 2 ampoules</td>
+<td>50 €</td>
+<td><span id="rst_bat2a">0 €</span></td>
+</tr>
 
-<!-- ENTREPRISES -->
-	<div class="institutions">
-                <h3><font color="#FF0080">🏢 Pour les entreprises, associations et institutions</font></h3>
+<tr>
+<td><input type="number" id="qte_bat4a" min="0" value="0" oninput="calculer()"></td>
+<td>BAT4A Kit solaire 4 ampoules</td>
+<td>70 €</td>
+<td><span id="rst_bat4a">0 €</span></td>
+</tr>
 
-		<p>Participez à l'équipement d'un village en finançant plusieurs kits.</p>
+</table>
 
-		<table border="1" cellpadding="8" cellspacing="0">
-			<thead>
-				<tr>
-					<th>Quantité</th>
-					<th>Équipement financé</th>
-					<th>Coût unitaire</th>
- 					<th>Total</th>
-				</tr>
-			</thead>
-		<tbody>
+<p class="total">
+Montant total :
+<span id="rst_total">0 €</span>
+</p>
 
-<!-- Alipt	-->
-			<tr>
-				<td><input type="number"  id="qte_alipt" min="0" value="0" oninput="calculer()"></td>
-   				<td>ALIPT Kit alimentaire petite famille</td>
-				<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 30 €</td>
-				<td><span id="rst_alipt">0 €</span></td>
-			</tr>
-<!-- Aligr	-->
-			<tr>
-   				<td><input type="number"  id="qte_aligr"	min="0"	value="0" oninput="calculer()"></td>
-				<td>ALIGR Kit alimentaire grande famille</td>
-				<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 50 €</td><td><span id="rst_aligr">0 €</span></td>
-			</tr>
-<!-- Acalr	-->
-			<tr>
-   				<td><input type="number"  id="qte_acalr" min="0" value="0" oninput="calculer()"></td>
-   				<td>ACALR Kit avec lanterne rechargeable ou 3 piles AA</td>
-				<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 50 €</td><td><span id="rst_acalr">0 €</span></td>
-			</tr>
-<!-- Ale2a	-->
-			<tr>
-				<td><input type="number"  id="qte_ale2a" min="0" value="0" oninput="calculer()"></td>
-				<td>ELE2A Kit chargeur avec 2 ampoules</td>
-   				<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 50 €</td><td><span id="rst_ale2a">0 €</span></td>
-			</tr>
-<!-- Bat2a	-->
-			<tr>
-				<td><input type="number"  id="qte_bat2a" min="0" value="0" oninput="calculer()"></td>
-				<td>BAT2A Kit solaire avec 2 ampoules</td>
-				<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 50 €</td>
-				<td><span id="rst_bat2a">0 €</span></td>
-			</tr>
-<!-- Bat4a	-->
-			<tr>
-				<td><input type="number"  id="qte_bat4a" min="0" value="0" oninput="calculer()"></td>
-				<td>BAT4A Kit solaire avec 4 ampoules</td>
-				<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 70 €</td><td><span id="rst_bat4a">0 €</span></td>
-			</tr>
+<hr>
 
-	        </tbody>
-	</table>
+<h2>Coordonnées du donateur</h2>
 
-	<p><strong>Montant total de votre contribution :</strong><span id="rst_total">0 €</span></p>
+<p>
+Nom :
+<input type="text" name="nom" required>
+</p>
 
-   </div>
+<p>
+Prénom :
+<input type="text" name="prenom" required>
+</p>
 
+<p>
+Email :
+<input type="email" name="email" required>
+</p>
 
-<!-- "#8000FF" -->
-	<h2><font color="#FF0080">Je souhaiterais faire un don.</font></h2>
- 
-    <form action="https://formsubmit.co/jftum93@gmail.com" method="POST">
- 
-	<p>Nom &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:<input type="text" name="nom" value="TUM" size="40"</p>
-	<p>Prénom :<input type="text" name="prenom" value="Jean Francois" size="40"></p>
-	<p>Statut :<input type="radio" name="statut" value="particulier">Particulier<input type="radio" name="statut" value="societe">Société</p>
-	<p>Adresse e-mail :<input type="text" name="email" value="tum@free.frM" size="40"></p>
-	<p>Montant envisagé :<input type="number" name="montant" value="88" style="width:8ch; min="1"> €</p>
-	<p>Message :<br><textarea name="message" rows="6" cols="50">Teste don 88</textarea></p>
-	<p><input type="submit" value="Je fais un don"
-		style="
-		color:blue;
-		font-size:100%;
-		font-weight:bold;
-		padding:8px 16px;
-		border-radius:5px;"
-	></p>
-   </form>
+<p>
+Statut :
+<input type="radio" name="statut" value="Particulier"> Particulier
+<input type="radio" name="statut" value="Société"> Société
+</p>
 
-   <hr width="80%">
-	<p><font color="#FF0080"><b>Merci pour votre don et votre générosité.</b></font></p>
-	<p>Grâce à vous, des familles peuvent avoir de quoi se nourrir au quotidien. 🙏❤️</p>
+<p>
+Montant :
+<input type="number"
+id="montant"
+name="montant"
+readonly>
+€
+</p>
 
-</div>
+<p>
+Message :
+<br>
+<textarea name="message"
+rows="6"
+cols="50"></textarea>
+</p>
 
-</section>
+<p>
+<input type="submit"
+value="Je fais un don">
+</p>
 
-  <footer>
-    <img src="../../../../JF.TUM/bin/compteur.cgi?df=compteur12" alt="Compteur de visites">
-  </footer>
- </body>
+</form>
+
+</body>
 </html>
-
