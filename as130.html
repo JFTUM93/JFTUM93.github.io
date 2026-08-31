@@ -38,12 +38,12 @@
     const totalBat2a = qteBat2a * 50;
     const totalBat4a = qteBat4a * 70;
 
-	const totalGeneral = 
-    totalAlipt 
-    totalAligr 
-    totalAcalr 
-    totalAle2a 
-    totalBat2a 
+    const totalGeneral = 
+    totalAlipt + 
+    totalAligr + 
+    totalAcalr + 
+    totalAle2a + 
+    totalBat2a + 
     totalBat4a;
     
 document.getElementById("rst_alipt").textContent = totalAlipt + " €";
@@ -54,9 +54,7 @@ document.getElementById("rst_bat2a").textContent = totalBat2a + " €";
 document.getElementById("rst_bat4a").textContent = totalBat4a + " €";
 document.getElementById("rst_total").textContent = totalGeneral + " €";
 
-
 document.getElementById("montant").value = totalGeneral;
-
 
 document.getElementById("montant_total").value =
 totalGeneral + " €";
@@ -170,32 +168,32 @@ document.getElementById("detail_don").value =
 			</tr>
 <!-- Aligr	-->
 			<tr>
-   				<td><input type="number"  id="qte_aligr"	min="0"	value="0" oninput="calculer()"></td>
+   				<td><input type="number"  id="qte_aligr" min="0" value="0" oninput="calculer()"></td>
 				<td>ALIGR Kit alimentaire grande famille</td>
 				<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 50 €</td><td><span id="rst_aligr">0 €</span></td>
 			</tr>
 <!-- Acalr	-->
 			<tr>
-   				<td><input type="number"  id="qte_acalr" min="0" value="0" oninput="calculer()"></td>
+   				<td><input type="number" id="qte_acalr" min="0" value="0" oninput="calculer()"></td>
    				<td>ACALR Kit avec lanterne rechargeable ou 3 piles AA</td>
 				<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 50 €</td><td><span id="rst_acalr">0 €</span></td>
 			</tr>
 <!-- Ale2a	-->
 			<tr>
-				<td><input type="number"  id="qte_ale2a" min="0" value="0" oninput="calculer()"></td>
+				<td><input type="number" id="qte_ale2a" min="0" value="0" oninput="calculer()"></td>
 				<td>ELE2A Kit chargeur avec 2 ampoules</td>
    				<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 50 €</td><td><span id="rst_ale2a">0 €</span></td>
 			</tr>
 <!-- Bat2a	-->
 			<tr>
-				<td><input type="number"  id="qte_bat2a" min="0" value="0" oninput="calculer()"></td>
+				<td><input type="number" id="qte_bat2a" min="0" value="0" oninput="calculer()"></td>
 				<td>BAT2A Kit solaire avec 2 ampoules</td>
 				<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 50 €</td>
 				<td><span id="rst_bat2a">0 €</span></td>
 			</tr>
 <!-- Bat4a	-->
 			<tr>
-				<td><input type="number"  id="qte_bat4a" min="0" value="0" oninput="calculer()"></td>
+				<td><input type="number" id="qte_bat4a" min="0" value="0" oninput="calculer()"></td>
 				<td>BAT4A Kit solaire avec 4 ampoules</td>
 				<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 70 €</td><td><span id="rst_bat4a">0 €</span></td>
 			</tr>
