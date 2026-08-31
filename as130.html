@@ -92,121 +92,81 @@ document.getElementById("detail_don").value =
 
 <h1>Je soutiens le projet</h1>
 
-<form action="https://formsubmit.co/jftum93@gmailype="hidden" name="_subject"
-value="Nouveau don reçu">
+<form action="https://formsubmit.co/jftum93@gmail.com" type="hidden" name="_subject" value="Nouveau don reçu" method="POST">
 
-<input type="hidden" name="montant_total"
-id="montant_total">
+<!--	<form action="https://formsubmit.co/jftum93@gmail.com" method="POST">	-->
 
-<input type="hidden" name="detail_don"
-id="detail_don">
+	<input type="hidden" name="montant_total" id="montant_total">
+	<input type="hidden" name="detail_don" id="detail_don">
 
-<h3>Entreprises, associations et institutions</h3>
+	<h3>Entreprises, associations et institutions</h3>
 
-<table>
+   <table>
+	<tr>	<th>Quantité</th>
+		<th>Désignation</th>
+		<th>Prix</th>
+		<th>Total</th>
+	</tr>
 
-<tr>
-<th>Quantité</th>
-<th>Désignation</th>
-<th>Prix</th>
-<th>Total</th>
-</tr>
+	<tr>
+		<td><input type="number" id="qte_alipt" min="0" value="0" oninput="calculer()"></td>
+		<td>ALIPT Kit alimentaire petite famille</td>
+		<td>30 €</td>
+		<td><span id="rst_alipt">0 €</span></td>
+	</tr>
 
-<tr>
-<td><input type="number" id="qte_alipt" min="0" value="0" oninput="calculer()"></td>
-<td>ALIPT Kit alimentaire petite famille</td>
-<td>30 €</td>
-<td><span id="rst_alipt">0 €</span></td>
-</tr>
+	<tr>
+		<td><input type="number" id="qte_aligr" min="0" value="0" oninput="calculer()"></td>
+		<td>ALIGR Kit alimentaire grande famille</td>
+		<td>50 €</td>
+		<td><span id="rst_aligr">0 €</span></td>
+	</tr>
 
-<tr>
-<td><input type="number" id="qte_aligr" min="0" value="0" oninput="calculer()"></td>
-<td>ALIGR Kit alimentaire grande famille</td>
-<td>50 €</td>
-<td><span id="rst_aligr">0 €</span></td>
-</tr>
+	<tr>
+		<td><input type="number" id="qte_acalr" min="0" value="0" oninput="calculer()"></td>
+		<td>ACALR Kit lanterne rechargeable</td>
+		<td>50 €</td>
+		<td><span id="rst_acalr">0 €</span></td>
+	</tr>
 
-<tr>
-<td><input type="number" id="qte_acalr" min="0" value="0" oninput="calculer()"></td>
-<td>ACALR Kit lanterne rechargeable</td>
-<td>50 €</td>
-<td><span id="rst_acalr">0 €</span></td>
-</tr>
+	<tr>
+		<td><input type="number" id="qte_ale2a" min="0" value="0" oninput="calculer()"></td>
+		<td>ELE2A Kit chargeur + 2 ampoules</td>
+		<td>50 €</td>
+		<td><span id="rst_ale2a">0 €</span></td>
+	</tr>
 
-<tr>
-<td><input type="number" id="qte_ale2a" min="0" value="0" oninput="calculer()"></td>
-<td>ELE2A Kit chargeur + 2 ampoules</td>
-<td>50 €</td>
-<td><span id="rst_ale2a">0 €</span></td>
-</tr>
+	<tr>
+		<td><input type="number" id="qte_bat2a" min="0" value="0" oninput="calculer()"></td>
+		<td>BAT2A Kit solaire 2 ampoules</td>
+		<td>50 €</td>
+		<td><span id="rst_bat2a">0 €</span></td>
+	</tr>
 
-<tr>
-<td><input type="number" id="qte_bat2a" min="0" value="0" oninput="calculer()"></td>
-<td>BAT2A Kit solaire 2 ampoules</td>
-<td>50 €</td>
-<td><span id="rst_bat2a">0 €</span></td>
-</tr>
+	<tr>
+		<td><input type="number" id="qte_bat4a" min="0" value="0" oninput="calculer()"></td>
+		<td>BAT4A Kit solaire 4 ampoules</td>
+		<td>70 €</td>
+		<td><span id="rst_bat4a">0 €</span></td>
+	</tr>
 
-<tr>
-<td><input type="number" id="qte_bat4a" min="0" value="0" oninput="calculer()"></td>
-<td>BAT4A Kit solaire 4 ampoules</td>
-<td>70 €</td>
-<td><span id="rst_bat4a">0 €</span></td>
-</tr>
+   </table>
 
-</table>
+	<p class="total">Montant total :<span id="rst_total">0 €</span></p>
 
-<p class="total">
-Montant total :
-<span id="rst_total">0 €</span>
-</p>
+   <hr>
+	<h2>Coordonnées du donateur</h2>
 
-<hr>
+	<p>Nom    :<input type="text" name="nom" required></p>
+	<p>Prénom :<input type="text" name="prenom" required></p>
+	<p>Email  :<input type="email" name="email" required></p>
+	<p>Statut :<input type="radio" name="statut" value="Particulier"> Particulier
+		   <input type="radio" name="statut" value="Société"> Société</p>
 
-<h2>Coordonnées du donateur</h2>
+	<p>Montant :<input type="number" id="montant" name="montant" readonly>€</p>
+	<p>Message :<br><textarea name="message"rows="6"cols="50"></textarea></p>
 
-<p>
-Nom :
-<input type="text" name="nom" required>
-</p>
-
-<p>
-Prénom :
-<input type="text" name="prenom" required>
-</p>
-
-<p>
-Email :
-<input type="email" name="email" required>
-</p>
-
-<p>
-Statut :
-<input type="radio" name="statut" value="Particulier"> Particulier
-<input type="radio" name="statut" value="Société"> Société
-</p>
-
-<p>
-Montant :
-<input type="number"
-id="montant"
-name="montant"
-readonly>
-€
-</p>
-
-<p>
-Message :
-<br>
-<textarea name="message"
-rows="6"
-cols="50"></textarea>
-</p>
-
-<p>
-<input type="submit"
-value="Je fais un don">
-</p>
+	<p><input type="submit"value="Je fais un don"></p>
 
 </form>
 
