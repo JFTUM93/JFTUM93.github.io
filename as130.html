@@ -61,6 +61,10 @@ document.getElementById("rst_bat2a").textContent = totalBat2a + " €";
 document.getElementById("rst_bat4a").textContent = totalBat4a + " €";
 document.getElementById("rst_total").textContent = totalGeneral + " €";
 
+document.getElementById("tex_donlib").value =
+totalMonLib + " €";
+
+
 document.getElementById("montant").value = totalGeneral;
 
 document.getElementById("montant_total").value =
@@ -170,7 +174,7 @@ document.getElementById("detail_don").value =
  	</div>
     <form action="https://formsubmit.co/jftum93@gmail.com" method="POST">
 
-	<input type="hidden" name="don_libre" id="rst_monlib">
+	<input type="hidden" name="don_libre" id="tex_donlib">
 	<input type="hidden" name="montant_total" id="montant_total">
 	<input type="hidden" name="detail_don" id="detail_don">
 
