@@ -156,17 +156,22 @@ document.getElementById("detail_don").value =
 
    <hr>
 	<h2>Coordonnées du donateur</h2>
+    <form action="https://formsubmit.co/jftum93@gmail.com" method="POST">
 
-	<p>Nom    :<input type="text" name="nom" required></p>
-	<p>Prénom :<input type="text" name="prenom" required></p>
-	<p>Email  :<input type="email" name="email" required></p>
-	<p>Statut :<input type="radio" name="statut" value="Particulier"> Particulier
-		   <input type="radio" name="statut" value="Société"> Société</p>
-
+	<p>Nom    :<input type="text" name="nom" value="TUM " size="40"></p>
+	<p>Prénom :<input type="text" name="prenom" value="Jean Francois " size="40"></p>
+	<p>Statut :<input type="radio" name="statut" value="particulier">Particulier<input type="radio" name="statut" value="societe">Société</p>
+	<p>Adresse e-mail :<input type="text" name="email" value="123.tum@free.fr" size="40"></p>
 	<p>Montant :<input type="number" id="montant" name="montant" readonly>€</p>
-	<p>Message :<br><textarea name="message"rows="6"cols="50"></textarea></p>
-
-	<p><input type="submit"value="Je fais un don"></p>
+	<p>Message :<br><textarea name="message" rows="6" cols="50">Teste parrainage 88" </textarea></p>
+	<p><input type="submit" value="Je fais un don"
+		style="
+		color:blue;
+		font-size:100%;
+		font-weight:bold;
+		padding:8px 16px;
+		border-radius:5px;"
+	</p>
 
 </form>
 
