@@ -24,12 +24,16 @@
 <script>
   function calculer() {
 
+    const monDonLib = Number(document.getElementById("mon_donlib").value) || 0;
+
     const qteAlipt = Number(document.getElementById("qte_alipt").value) || 0;
     const qteAligr = Number(document.getElementById("qte_aligr").value) || 0;
     const qteAcalr = Number(document.getElementById("qte_acalr").value) || 0;
     const qteAle2a = Number(document.getElementById("qte_ale2a").value) || 0;
     const qteBat2a = Number(document.getElementById("qte_bat2a").value) || 0;
     const qteBat4a = Number(document.getElementById("qte_bat4a").value) || 0;
+
+    const totalMonLib = monDonLib * 1;
 
     const totalAlipt = qteAlipt * 30;
     const totalAligr = qteAligr * 50;
@@ -38,13 +42,16 @@
     const totalBat2a = qteBat2a * 50;
     const totalBat4a = qteBat4a * 70;
 
-    const totalGeneral = 
+    const totalGeneral =
+    totalMonLib +
     totalAlipt + 
     totalAligr + 
     totalAcalr + 
     totalAle2a + 
     totalBat2a + 
     totalBat4a;
+
+document.getElementById("rst_monlib").textContent = totalMonLib + " €";
     
 document.getElementById("rst_alipt").textContent = totalAlipt + " €";
 document.getElementById("rst_aligr").textContent = totalAligr + " €";
@@ -80,7 +87,7 @@ document.getElementById("detail_don").value =
    </head>
    <body bgcolor="#FFFFFF">
 
-	<div style="margin-left:22ch;">
+	<div style="margin-left:13ch;">
 	     <h1><font color="#FF0080">Je soutien le projet</font></h1>
 	</div>
 
@@ -89,65 +96,9 @@ document.getElementById("detail_don").value =
 
     <form action="https://formsubmit.co/jftum93@gmail.com" method="POST">
 
-<!-- PARTCULIERS -->
-	<div class="particuliers">
-
-                <h3><font color="#FF0080">👤 Pour les particuliers</font></h3>
-
-			<p>Choisissez le montant de votre don :</p>
-
-		<label>
-			<input type="radio" name="don-particulier">
-			Don libre : <input type="number" style="width:13ch; min="1" placeholder="Montant en €">
-		</label>
-		<br>
-
-		<label>
-		   <input type="radio" name="don-particulier">
-			30 € – ALIPT 1 kit alimentaire petite famille
-		</label>
-		<br>
-
-		<label>
-		<input type="radio" name="don-particulier">
-			50 € – ALIGR 1 kit alimentaire grande famille
-		</label>
-		<br>
- 
-		<label>
-		<input type="radio" name="don-particulier">
-			50 € – ACALR 1 kit lanterne rechargeable avec 3 piles AA
-		</label>
-		<br>
-
-		<label>
-		<input type="radio" name="don-particulier">
-			50 € – ELE2A 1 kit chargeur avec 2 ampoules
-		</label>
-		<br>
-
-		<label>
-		<input type="radio" name="don-particulier">
-			50 € – BAT2A 1 kit solaire avec 2 ampoules
-		</label>
-		<br>
-
-		<label>
-		<input type="radio" name="don-particulier">
-			70 € – BAT4A 1 kit solaire avec 4 ampoules
-		</label>
-	</div>
-
-	<hr>
-
-<!-- ENTREPRISES -->
-
-
-	<div class="institutions">
-                <h3><font color="#FF0080">🏢 Pour les entreprises, associations et institutions</font></h3>
-
+	   <div style="margin-left:18ch;">
 		<p>Participez à l'équipement d'un village en finançant plusieurs kits.</p>
-
+	   </div>
 		<table border="1" cellpadding="8" cellspacing="0">
 			<thead>
 				<tr>
@@ -159,9 +110,16 @@ document.getElementById("detail_don").value =
 			</thead>
 		<tbody>
 
+<!-- Don libre	-->
+			<tr>
+				<td><input type="number" id="mon_donlib" min="0" value="0" oninput="calculer()"></td>
+   				<td>DONLIB &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Je contribue à hauteur de ...</td>
+				<td>Soutien libre</td>
+				<td><span id="rst_monlib">0 €</span></td>
+			</tr>
 <!-- Alipt	-->
 			<tr>
-				<td><input type="number"  id="qte_alipt" min="0" value="0" oninput="calculer()"></td>
+				<td><input type="number" id="qte_alipt" min="0" value="0" oninput="calculer()"></td>
    				<td>ALIPT Kit alimentaire petite famille</td>
 				<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 30 €</td>
 				<td><span id="rst_alipt">0 €</span></td>
@@ -201,17 +159,21 @@ document.getElementById("detail_don").value =
 	        </tbody>
 	</table>
 
+
+	<div style="margin-left:22ch;">
+
 	<p><strong>Montant total de votre contribution :</strong><span id="rst_total">0 €</span></p>
 
-   </div>
-
-
 <!-- "#8000FF" -->
-	<h2><font color="#FF0080">Je souhaiterais faire un don.</font></h2>
- 
+	<div style="margin-left:13ch;">
+		<h2><font color="#FF0080">Faire un don.</font></h2>
+ 	</div>
     <form action="https://formsubmit.co/jftum93@gmail.com" method="POST">
- 
+
+	<input type="hidden" name="don_libre" id="don_libre">
+<!--
 	<input type="hidden" name="montant_total" id="montant_total">
+-->
 	<input type="hidden" name="detail_don" id="detail_don">
 
 	<p>Nom &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:<input type="text" name="nom" value="TUM" size="40"</p>
@@ -220,19 +182,28 @@ document.getElementById("detail_don").value =
 	<p>Adresse e-mail :<input type="text" name="email" value="tum@free.frM" size="40"></p>
 	<p>Montant envisagé :<input type="number" id="montant" name="montant" readonly>€</p>
 	<p>Message :<br><textarea name="message" rows="6" cols="50">Teste don </textarea></p>
-	<p><input type="submit" value="Je fais un don"
+
+	<div style="margin-left:15ch;">
+		<p><input type="submit" value="Je fais un don"
 		style="
 		color:blue;
 		font-size:100%;
 		font-weight:bold;
 		padding:8px 16px;
 		border-radius:5px;"
-	></p>
+		></p>
+	</div>
    </form>
 
+   </div>
+
    <hr width="80%">
-	<p><font color="#FF0080"><b>Merci pour votre don et votre générosité.</b></font></p>
-	<p>Grâce à vous, des familles peuvent avoir de quoi se nourrir au quotidien. 🙏❤️</p>
+	<div style="margin-left:27ch;">
+		<p><font color="#FF0080"><b>Merci pour votre don et votre générosité.</b></font></p>
+	</div>
+	<div style="margin-left:15ch;">
+		<p>Grâce à vous, des familles peuvent avoir de quoi se nourrir au quotidien. 🙏❤️</p>
+	</div>
 </div>
 
 </section>
