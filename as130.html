@@ -19,6 +19,17 @@
             background-color: #ffffff;
 	    color: #0000FF;
         }
+	
+	.blue-gras {
+	color: blue;
+	font-weight: bold;
+	}
+	
+	.rouge-gras {
+	color: red;
+	font-weight: bold;
+	}
+
    </style>	
 
 <script>
@@ -103,6 +114,8 @@ document.getElementById("detail_don").value =
 	   <div style="margin-left:18ch;">
 		<p>Participez à l'équipement d'un village en finançant plusieurs kits.</p>
 	   </div>
+
+	   <div style="margin-left:10ch;">
 		<table border="1" cellpadding="8" cellspacing="0">
 			<thead>
 				<tr>
@@ -116,57 +129,62 @@ document.getElementById("detail_don").value =
 
 <!-- Don libre	-->
 			<tr>
-				<td><input type="number" id="mon_donlib" min="0" value="0" oninput="calculer()"></td>
-   				<td>DONLIB &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Je contribue à hauteur de ...</td>
-				<td>Soutien libre</td>
+				<td><input type="number" id="mon_donlib" min="0" max="99999" value="0" oninput="calculer()"></td>
+				<td><span class="blue-gras">DONLIB</span>&nbsp;&nbsp;&nbsp;Je contribue à hauteur de ...</td>
+				<td><span class="rouge-gras">Soutien libre</span></td>
 				<td><span id="rst_monlib">0 €</span></td>
 			</tr>
 <!-- Alipt	-->
 			<tr>
-				<td><input type="number" id="qte_alipt" min="0" value="0" oninput="calculer()"></td>
-   				<td>ALIPT Kit alimentaire petite famille</td>
-				<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 30 €</td>
+				<td><input type="number" id="qte_alipt" min="0" max="99999" value="0" oninput="calculer()"></td>
+				<td><span class="blue-gras">ALIPT   </span> Kit alimentaire petite famille</td>
+				<td><span class="rouge-gras">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 30 €</span></td>
 				<td><span id="rst_alipt">0 €</span></td>
 			</tr>
 <!-- Aligr	-->
 			<tr>
-   				<td><input type="number"  id="qte_aligr" min="0" value="0" oninput="calculer()"></td>
-				<td>ALIGR Kit alimentaire grande famille</td>
-				<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 50 €</td><td><span id="rst_aligr">0 €</span></td>
+   				<td><input type="number"  id="qte_aligr" min="0" max="99999" value="0" oninput="calculer()"></td>
+				<td><span class="blue-gras">ALIGR  </span>Kit alimentaire grande famille</td>
+				<td><span class="rouge-gras">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 50 €</span></td>
+				<td><span id="rst_aligr">0 €</span></td>
 			</tr>
 <!-- Acalr	-->
 			<tr>
-   				<td><input type="number" id="qte_acalr" min="0" value="0" oninput="calculer()"></td>
-   				<td>ACALR Kit avec lanterne rechargeable ou 3 piles AA</td>
-				<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 50 €</td><td><span id="rst_acalr">0 €</span></td>
+   				<td><input type="number" id="qte_acalr" min="0" max="99999" value="0" oninput="calculer()"></td>
+				<td><span class="blue-gras">ACALR  </span>Kit lanterne rechargeable & 3*AA</td>
+				<td><span class="rouge-gras">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 50 €</span></td>
+				<td><span id="rst_acalr">0 €</span></td>
 			</tr>
 <!-- Ale2a	-->
 			<tr>
-				<td><input type="number" id="qte_ale2a" min="0" value="0" oninput="calculer()"></td>
-				<td>ELE2A Kit chargeur avec 2 ampoules</td>
-   				<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 50 €</td><td><span id="rst_ale2a">0 €</span></td>
+				<td><input type="number" id="qte_ale2a" min="0" max="99999" value="0" oninput="calculer()"></td>
+				<td><span class="blue-gras">ALE2A  </span>Kit chargeur avec 2 ampoules</td>
+				<td><span class="rouge-gras">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 50 €</span></td>
+				<td><span id="rst_ale2a">0 €</span></td>
 			</tr>
 <!-- Bat2a	-->
 			<tr>
-				<td><input type="number" id="qte_bat2a" min="0" value="0" oninput="calculer()"></td>
-				<td>BAT2A Kit solaire avec 2 ampoules</td>
-				<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 50 €</td>
+				<td><input type="number" id="qte_bat2a" min="0" max="99999" value="0" oninput="calculer()"></td>
+				<td><span class="blue-gras">BAT2A</span>  Kit solaire avec 2 ampoules</td>
+				<td><span class="rouge-gras">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 50 €</span></td>
 				<td><span id="rst_bat2a">0 €</span></td>
 			</tr>
 <!-- Bat4a	-->
 			<tr>
-				<td><input type="number" id="qte_bat4a" min="0" value="0" oninput="calculer()"></td>
-				<td>BAT4A Kit solaire avec 4 ampoules</td>
-				<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 70 €</td><td><span id="rst_bat4a">0 €</span></td>
+				<td><input type="number" id="qte_bat4a" min="0" max="99999" value="0" oninput="calculer()"></td>
+				<td><span class="blue-gras">BAT4A</span>  Kit solaire avec 4 ampoules</td>
+				<td><span class="rouge-gras">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 70 €</span></td>
+				<td><span id="rst_bat4a">0 €</span></td>
 			</tr>
 
 	        </tbody>
 	</table>
 
+	</div>
 
 	<div style="margin-left:22ch;">
 
-	<p><strong>Montant total de votre contribution :</strong><span id="rst_total">0 €</span></p>
+	<p><strong>Montant total de votre contribution : </strong><span id="rst_total">0 €</span></p>
 
 <!-- "#8000FF" -->
 	<div style="margin-left:13ch;">
@@ -183,7 +201,7 @@ document.getElementById("detail_don").value =
 	<p>Statut :<input type="radio" name="statut" value="particulier">Particulier<input type="radio" name="statut" value="societe">Société</p>
 	<p>Adresse e-mail :<input type="text" name="email" value="tum@free.frM" size="40"></p>
 	<p>Montant envisagé :<input type="number" id="montant" name="montant" readonly>€</p>
-	<p>Message :<br><textarea name="message" rows="6" cols="50">Teste don </textarea></p>
+	<p>Message :<br><textarea name="message" rows="6" cols="50">Teste de soutien </textarea></p>
 
 	<div style="margin-left:15ch;">
 		<p><input type="submit" value="Je fais un don"
