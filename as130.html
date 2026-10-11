@@ -41,26 +41,20 @@
     const qteAligr = Number(document.getElementById("qte_aligr").value) || 0;
     const qteAcalr = Number(document.getElementById("qte_acalr").value) || 0;
     const qteAle2a = Number(document.getElementById("qte_ale2a").value) || 0;
-    const qteBat2a = Number(document.getElementById("qte_bat2a").value) || 0;
-    const qteBat4a = Number(document.getElementById("qte_bat4a").value) || 0;
 
     const totalMonLib = monDonLib * 1;
 
     const totalAlipt = qteAlipt * 30;
     const totalAligr = qteAligr * 50;
-    const totalAcalr = qteAcalr * 50;
-    const totalAle2a = qteAle2a * 50;
-    const totalBat2a = qteBat2a * 50;
-    const totalBat4a = qteBat4a * 70;
+    const totalAcalr = qteAcalr * 30;
+    const totalAle2a = qteAle2a * 40;
 
     const totalGeneral =
     totalMonLib +
     totalAlipt + 
     totalAligr + 
     totalAcalr + 
-    totalAle2a + 
-    totalBat2a + 
-    totalBat4a;
+    totalAle2a; 
 
 document.getElementById("rst_monlib").textContent = totalMonLib + " €";
     
@@ -68,8 +62,6 @@ document.getElementById("rst_alipt").textContent = totalAlipt + " €";
 document.getElementById("rst_aligr").textContent = totalAligr + " €";
 document.getElementById("rst_acalr").textContent = totalAcalr + " €";
 document.getElementById("rst_ale2a").textContent = totalAle2a + " €";
-document.getElementById("rst_bat2a").textContent = totalBat2a + " €";
-document.getElementById("rst_bat4a").textContent = totalBat4a + " €";
 document.getElementById("rst_total").textContent = totalGeneral + " €";
 
 document.getElementById("tex_donlib").value =
@@ -87,8 +79,6 @@ document.getElementById("detail_don").value =
 "ALIGR=" + totalAligr + " €, " +
 "ACALR=" + totalAcalr + " €, " +
 "ELE2A=" + totalAle2a + " €, " +
-"BAT2A=" + totalBat2a + " €, " +
-"BAT4A=" + totalBat4a + " €, " +
 "TOTAL=" + totalGeneral + " €";
 }
 
@@ -152,31 +142,17 @@ document.getElementById("detail_don").value =
 			<tr>
    				<td><input type="number" id="qte_acalr" min="0" max="99999" value="0" oninput="calculer()"></td>
 				<td><span class="blue-gras">ACALR  </span>Kit lanterne rechargeable & 3*AA</td>
-				<td><span class="rouge-gras">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 50 €</span></td>
+				<td><span class="rouge-gras">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 30 €</span></td>
 				<td><span id="rst_acalr">0 €</span></td>
 			</tr>
 <!-- Ale2a	-->
 			<tr>
 				<td><input type="number" id="qte_ale2a" min="0" max="99999" value="0" oninput="calculer()"></td>
 				<td><span class="blue-gras">ALE2A  </span>Kit chargeur avec 2 ampoules</td>
-				<td><span class="rouge-gras">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 60 €</span></td>
+				<td><span class="rouge-gras">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 40 €</span></td>
 				<td><span id="rst_ale2a">0 €</span></td>
 			</tr>
-<!-- Bat2a	
-			<tr>
-				<td><input type="number" id="qte_bat2a" min="0" max="99999" value="0" oninput="calculer()"></td>
-				<td><span class="blue-gras">BAT2A</span>  Kit solaire avec 2 ampoules</td>
-				<td><span class="rouge-gras">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 60 €</span></td>
-				<td><span id="rst_bat2a">0 €</span></td>
-			</tr>
 
-			<tr>
-				<td><input type="number" id="qte_bat4a" min="0" max="99999" value="0" oninput="calculer()"></td>
-				<td><span class="blue-gras">BAT4A</span>  Kit solaire avec 4 ampoules</td>
-				<td><span class="rouge-gras">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 70 €</span></td>
-				<td><span id="rst_bat4a">0 €</span></td>
-			</tr>
--->
 	        </tbody>
 	</table>
 
